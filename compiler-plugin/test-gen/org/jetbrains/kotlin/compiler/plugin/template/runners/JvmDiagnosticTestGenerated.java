@@ -28,6 +28,12 @@ public class JvmDiagnosticTestGenerated extends AbstractJvmDiagnosticTest {
   }
 
   @Test
+  @TestMetadata("macroDiagnisticTest.kt")
+  public void testMacroDiagnisticTest() {
+    runTest("compiler-plugin/testData/diagnostics/macroDiagnisticTest.kt");
+  }
+
+  @Test
   @TestMetadata("simple.kt")
   public void testSimple() {
     runTest("compiler-plugin/testData/diagnostics/simple.kt");

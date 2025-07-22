@@ -27,12 +27,16 @@ val annotationsRuntimeClasspath: Configuration by configurations.creating { isTr
 
 dependencies {
     compileOnly(kotlin("compiler"))
+    implementation("io.github.classgraph:classgraph:4.8.181")
+    implementation(project(":plugin-annotations"))
+    implementation(project(":macro-lib"))
 
     testFixturesApi(kotlin("test-junit5"))
     testFixturesApi(kotlin("compiler-internal-test-framework"))
     testFixturesApi(kotlin("compiler"))
 
     annotationsRuntimeClasspath(project(":plugin-annotations"))
+    annotationsRuntimeClasspath(project(":macro-lib"))
 
     // Dependencies required to run the internal test framework.
     testRuntimeOnly("junit:junit:4.13.2")
